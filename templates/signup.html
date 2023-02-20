@@ -1,0 +1,11 @@
+
+<div>
+    <h1 style="color: green; text-align: center; padding-top: 180px;">Sign Up</h1>
+    <form style="text-align: center;" action="{{ url_for('signup') }}" method="post" >
+        <input type="text" name="name" placeholder="Full Name" required><br><br>
+        <input type="email" name="email" placeholder="Email" required><br><br>
+        <input type="password" name="password" placeholder="Password" required><br><br>
+        <input style="background-color:green; color: white; border-radius: 20%;" type="submit" value="Sign Up"><br>
+        <h4 style="color: green;">If already have a account, <a href="{{ url_for('login') }}">Sign In</a></h4>
+    </form>
+</div>

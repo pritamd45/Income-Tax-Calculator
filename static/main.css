@@ -1,0 +1,201 @@
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* css variables */
+:root{
+    --navbar-height:30px;
+}
+
+/* Navigation bar */
+#navbar{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* logo or image */
+#logo{
+    margin: 3px 6px;
+}
+#logo img{
+    border-radius: 50%;
+    max-width: 40px;
+    max-height: 40px;
+    margin: 3px 6px;
+}
+#navbar ul{
+    display: flex;
+}
+#navbar::before{
+    content: "";
+    background-color: rgb(86, 231, 224);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1rem;
+}
+
+#navbar ul li a{
+    color: white;
+    display: block;
+    padding: 3px 22px;
+    border-radius: 20px;
+    font-family: 'Baloo 2', cursive;
+    text-decoration: none;
+}
+#navbar ul li a:hover{
+    color: white;
+    background-color: rgb(89, 170, 89);
+}
+
+/* home section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding:3px 200px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+#home img{
+    content: "";
+    background:  no-repeat center  center/cover;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.80;
+}
+
+#home h1{
+    color: green;
+    text-align: center;
+    font-size: 1.5rem;
+}
+#home p{
+    color: green;
+    text-align: left;
+    margin-left: 500px;
+    top: 10px;
+    font-size: 1.5rem;
+    font-family: 'Baloo 2', cursive;
+}
+
+/* information */
+#information{
+    padding-top :290px;
+    display: flex;
+    position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+#information img{
+    width: 450px;
+    height: 450px;
+}
+#information h1{
+    color: green;
+    padding-top:6px;
+    padding-bottom:5px;
+    padding-left: 15px;
+    font-size: 2.5rem;
+}
+.details{
+    color:rgb(8, 161, 8);
+    padding-left: 20px;
+    font-size: 1.3rem;
+}
+
+#calculation{
+    padding-top :30px;
+    display: flex;
+    position: relative;
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: rgb(86, 231, 224) ;
+    z-index: 0.4;
+}
+#calculation h1{
+    color: green;
+    font-size: 2.5rem;
+}
+#calculation p{
+    color:rgb(8, 161, 8);
+    padding-left: 10px;
+    font-size: 1.3rem;
+    padding-top: 25px;
+}
+#calculation img{
+    width: 450;
+    height: 450;
+}
+
+#exemption{
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 30px;
+}
+#exemption h1{
+    color: green;
+    font-size: 2.5rem;
+}
+#exemption ul{
+    padding-top: 20px;
+}
+#exemption ul li{
+    color:rgb(8, 161, 8);
+    font-size: 1.3rem;
+}
+footer{
+    background-color: rgb(86, 231, 224) ;
+    z-index: 0.4;
+    text-align: center;
+}
+
+
+#contact-box{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+#contact-box input,
+#contact-box textarea{
+    width: 100%;
+    padding:0.5rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+#contact-box from{
+    width: 40%;
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+#contact-box label{
+    font-size: 1.3rem;
+    font-family: 'Baloo 2', cursive;
+}
+
+#signup{
+    align-items: center;
+}

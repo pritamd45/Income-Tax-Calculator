@@ -1,0 +1,190 @@
+<h1 class="heading">Calculator</h1>
+<style>
+    .heading{
+        text-align: center;
+        color: green;
+    }
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+    
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 5px 0;
+    
+      /* Position the tooltip */
+      position: absolute;
+      z-index: 1;
+    }
+    
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    .calform{
+        display: flex;
+        align-items: center;
+        text-align: none;
+        justify-content: center;
+    }
+    .income{
+        margin:10px;
+    }
+    .exemption{
+        padding-left:30px;
+    }
+    .btn{
+        align-items: center;
+        color:white;
+        background-color: green;
+        margin-top: 50px;
+    }
+    .fields label{
+        color:green;
+    }
+</style>
+<form style="text-align: center;" action="{{ url_for('Calculator') }}", method="post">
+    <section class="calform">
+        <section class="income">
+            <div class="fields">
+                <label for="Income from Salary">Income from Salary</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Salary before reducing HRA, LTA, standard deductions & professional tax. If applicable, reduce leave encashment (max: 25L)</span>
+                </div>
+                <br>
+                <input type="text" name="Income_from_salary" required>
+            </div>
+            <div class="fields">
+                <label for="Income from Interest ">Income from Interest </label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Includes interest from savings bank, deposits and other interest</span>
+                </div>
+                <br>
+                <input type="text" name="Income_from_Interest" required>
+            </div>
+            <div class="fields">
+                <label for="Rental Income Received">Rental Income Received</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Annual rent received on let-out property</span>
+                </div>
+                <br>
+                <input type="text" name="Rental_Income_Received" required>
+            </div>
+            <div class="fields">
+                <label for="Income from Digital Assets">Income from Digital Assets</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Net Income from Digital Assets, taxed at 30%</span>
+                </div>
+                <br>
+                <input type="text" name="Income_from_Digital_Assets" required>
+            </div>
+            <div class="fields">
+                <label for="Other Income">Other Income</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Includes taxable freelancing income or any other taxable income</span>
+                </div>
+                <br>
+                <input type="text" name="Other_Income" required>
+            </div>
+            <div class="fields">
+                <label for="Exempt Allowances">Exempt Allowances</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">HRA, LTA, Professional Tax and any Other Exemptions</span>
+                </div>
+                <br>
+                <input type="text" name="exempt_allowances" required>
+            </div>
+            <div class="fields">
+                <label for="Interest Paid on Home Loan">Interest Paid on Home Loan</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Interest paid on housing loan taken for self-occupied property</span>
+                </div>
+                <br>
+                <input type="text" name="Interest_Paid_on_Home_Loan" required>
+            </div>
+            <div class="fields">
+                <label for="Interest Paid on Loan">Interest Paid on Loan</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Interest paid on housing loan taken for rented/let-out property</span>
+                </div>
+                <br>
+                <input type="text" name="Interest_Paid_on_Loan" required>
+            </div>
+        </section>
+        <section class="exemption">
+            <div class="fields">
+                <label for="Basic Deductions - 80C">Basic Deductions - 80C</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Amount invested/paid in tax saving instruments such as PPF, ELSS mutual funds, LIC premium, etc. (max: 1.5L)</span>
+                </div>
+                <br>
+                <input type="text" name="Basic_Deductions_80C" required>
+            </div>
+            <div class="fields">
+                <label for="Medical Insurance - 80D">Medical Insurance - 80D</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Medical premium & preventive health checkup fees paid for self & family including parents</span>
+                </div>
+                <br>
+                <input type="text" name="Medical_Insurance_80D" required>
+            </div>
+            <div class="fields">
+                <label for="Interest on Educational Loan - 80E">Interest on Educational Loan - 80E</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Amount of interest paid on loan taken for higher education</span>
+                </div>
+                <br>
+                <input type="text" name="Interest_on_Educational_Loan_80E" required>
+            </div>
+            <div class="fields">
+                <label for="Employee's contribution to NPS - 80CCD">Employee's contribution to NPS - 80CCD</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Includes voluntary contribution to National Pension Scheme (NPS) under section 80CCD(1) and 80CCD(1B)</span>
+                </div>
+                <br>
+                <input type="text" name="Employees_contribution_to_NPS_80CCD" required>
+            </div>
+            <div class="fields">
+                <label for="Interest from Deposits - 80TTA">Interest from Deposits - 80TTA</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Amount of interest income on deposits in savings account (includes fixed/recurring deposit interest in case of senior citizen)</span>
+                </div>
+                <br>
+                <input type="text" name="Interest_from_Deposits_80TTA" required>
+            </div>
+            <div class="fields">
+                <label for="Donations to Charity - 80G">Donations to Charity - 80G</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Amount paid as donation to charitable insitutions or certain recognized funds</span>
+                </div>
+                <br>
+                <input type="text" name="Donations_to_Charity_80G" required>
+            </div>
+            <div class="fields">
+                <label for="Interest on Housing Loan - 80EEA">Interest on Housing Loan - 80EEA</label>
+                <div class="tooltip">&#x1F6C8;
+                    <span class="tooltiptext">Amount of interest paid on housing loan sanctioned during FY 2021-2022 (max: 1.5L)</span>
+                </div>
+                <br>
+                <input type="text" name="Interest_on_Housing_Loan_80EEA" required>
+            </div>
+        </section>
+    </section>
+    <input class="btn" type="submit" value="Calculate">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+            <h6 style="color: green;">{{ message }}<h6>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+</form>

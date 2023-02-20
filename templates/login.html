@@ -1,0 +1,16 @@
+
+<h1 style="color: green; text-align: center; padding-top: 180px;">Sign In</h1>
+<form style="text-align: center;" action="{{ url_for('login') }}" method="post">
+    <input type="text" name="name" placeholder="Username" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <input style="background-color:green; color: white; border-radius: 20%;" type="submit" value="Sign In">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class=flashes>
+        {% for message in messages %}
+            <h6 style="color: green;">{{ message }}<h6>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+</form>
